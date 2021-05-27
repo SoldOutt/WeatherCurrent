@@ -1,0 +1,144 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: #fff;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.card{
+	width: 350px;
+	height: 500px;
+	/*padding: 20px;*/
+	position: relative;
+	/*overflow: hidden;*/
+}
+.header{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	font-size: 20px;
+}
+.front{
+	width: 100%;
+	height: 100%;
+	background-color: #10A6DD;
+	padding: 20px;
+	position: relative;
+	transform-origin: right;
+	transform: translateX(0) rotateY(0deg);
+	transition: 1s;
+}
+.front_body{
+	display: flex;
+	flex-direction: column;
+	/*justify-content: center;*/
+	margin: 0 auto;
+	padding-top: 20px;
+	text-align: center;
+	font-size: 30px;
+}
+.front_body i{
+	font-size: 90px;
+	/*color: #fff;*/
+}
+.list{
+	margin-top: 30px;
+	list-style: none;
+}
+.list_item{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	border-bottom: 2px solid #fff;
+	font-size: 20px;
+	padding : 9px;
+}
+.list_item:last-child{
+	border:none;
+}
+.behind{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #F03596;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	transform: translateX(100%) rotateY(90deg);
+	transform-origin: left;
+	transition: 1s;
+}
+.card.active .front{
+	transform: translateX(-100%) rotateY(-90deg);
+}
+.card.active .behind{
+	transform: translateX(0)  rotateY(0);
+}
+/* .card:hover .behind{
+	animation: animate1 1s linear; 
+	transform: translateX(0) rotateY(0);
+}
+.card:hover .front{
+	animation: animate2 1s linear;
+	transform: translateX(-75px) rotateY(90deg);
+} */
+@keyframes animate1{
+	0%{
+		transform: translateX(100%) rotateY(90deg);
+	}
+	100%{
+		transform: translateX(0)  rotateY(0);
+	}
+}
+@keyframes animate2{
+	0%{
+		transform: translateX(0) rotateY(0);
+		/*left: 0%;*/
+	}
+	100%{
+		transform: translateX(-100%) rotateY(-90deg);
+		/*left: -75%;*/
+	}
+}
+.behind .button{
+	width: 100%;
+	text-align: right;
+}
+.button i{
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background-color: #fff;
+	color: #F03596;
+	border-radius: 50%;
+	font-size: 16px;
+}
+.list_day{
+	list-style: none;
+	margin-top: 40px;
+}
+.list_day-item{
+	border-bottom: 2px solid #fff;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0;
+	font-size: 20px;
+}
+.form{
+	position: fixed;
+    top: 20px;
+	display: flex;
+}
+.form input,button{
+	height: 30px;
+	color: black;
+	outline: none;
+	border: 1px solid rgba(0,0,0,0.7);
+	padding: 8px;
+}
