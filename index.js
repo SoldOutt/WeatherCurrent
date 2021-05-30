@@ -11,7 +11,7 @@ var btnSubmit = document.querySelector('#check_weather')
 var key = '23ea1d18608b4720262a930e903edbd2'
 btnSubmit.addEventListener('click',()=>{
     var city = document.querySelector('input#city_name').value
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&lang=vi`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&lang=vi`)
     .then(response=>response.json())
     .then(data=>{
         if(data.cod==404){
